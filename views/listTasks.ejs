@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>To Do List</title>
+</head>
+    <body>
+        <div class="déplacementbloc"></div>
+            <header>
+        
+                <h1><center>Tâche à réaliser</center></h1>
+                <center><img src="/image/To Do List.jpeg" alt=""></center>
+        
+            </header>
+            <main>
+                <section>
+        
+                    <h2>Liste des tâches</h2>
+        
+                </section>
+                <section>
+        
+                    <ul>
+                        <% for (task of tasks) { %>
+                            <li>
+                                <%= task.taskName %> <!--Affiche les tâches de la liste "tasks"-->
+                                <a href="/delete/<%= task.idtasks %>">Supprimer</a> <!--balise EJS--> <!--On crée un lien de suppression pour chaque tâche-->
+                            </li>
+                        <% } %>
+                    </ul>
+        
+                </section>
+                <section>
+        
+                    <h2>Ajouter une Tâche :</h2>
+        
+                    <form action="/add" method="post"> <!--Balise permettant de créer un formulaire-->
+                    <!--action nous montre le chemin pour lequel le formulaire sera soumis. C'est-à-dire que le chemin est /add-->
+                    <input type="text" id="taskName" name="taskName">
+                    <button id="sauver">Sauver</button>
+        
+                    </form>
+        
+                </section>
+            </main>
+        </div>  
+    </body>
+</html>
