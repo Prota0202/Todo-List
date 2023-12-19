@@ -1,7 +1,7 @@
 import Model from './Model.js';
 
-export default class users extends Model {
+export default class Task extends Model {
 
-  static table = "users.tasks";
-  static primary = ["idtasks"];
+  static table = "users2.Liste";
+  static primary = ["id"];
 }
